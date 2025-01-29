@@ -4,11 +4,13 @@ import messageRouter from "./routes/message.router.js"
 import dotenv from "dotenv"
 import { connectDB } from "./lib/db.js"
 import cookieParser from "cookie-parser"
+import cors from "cors"
 
 dotenv.config()
 
 const app=express()
 
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
